@@ -10,7 +10,13 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', url:'https://github.com/kudaz28/lbg-vat-calculator.git'
+                git branch: 'main', url:'https://github.com/kudaz28/pingme_demo.git'
+            }
+        }
+        stage('Maven Build') {
+            steps {
+                // Get some code from a GitHub repository
+                sh "mvn clean package"
             }
         }
         stage('Build') {
